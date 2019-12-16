@@ -7,8 +7,8 @@ AddRemoteEvent("commands:inventory", function(player)
 		return AddPlayerChat(player, "Selected player does not exist")
 	end
 
-	ShowMessageBox(player, "<span>"..GetPlayerName(p).."("..p..")</span><br><br>\
-	Cash: "..GetPlayerCashFormat(p).."<br>\
-	Banque: "..FormatMoney(PlayerData[p].bank_balance).."<br>\
+	ShowMessageBox(player, "<span>".."Mon frère".."("..p..")</span><br><br>\
+	Cash: ".."1234€".."<br>\
+	Banque: ".."654€".."<br>\
 	<img src=\"http://game/objects/1\">")
 end)
