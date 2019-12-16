@@ -43,16 +43,12 @@ AddEvent("OnPlayerSteamAuth", OnPlayerSteamAuth)
 function OnPlayerJoin(player)
 	print("OnPlayerJoin("..player..")")
 
-	CreatePlayerData(player)
-
 	SetPlayerSpawnLocation(player, 170027, 191893, 1309, 173)
 
 	Delay(2000, function(player)
 		AddPlayerChat(player, '<span color="#8800eeff" style="bold" size="16">Bienvenue sur Trumpistan\' RP!</>')
 		--AddPlayerChat(player, '<span color="#8800eeff" size="14">Popular teleports: /gas  /prison  /town</>')
 	end, player)
-
-	print(LoadPlayerAccount(player))
 end
 AddEvent("OnPlayerJoin", OnPlayerJoin)
 
