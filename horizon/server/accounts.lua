@@ -142,8 +142,7 @@ function CreatePlayerAccount(player)
 		GetPlayerLocale(player),
 		GetPlayerIP(player))
 
-	print(query)
-	mariadb_query(sql, query, OnAccountCreated, player)
+	mariadb_async_query(sql, query, OnAccountCreated, player)
 end
 
 
@@ -298,7 +297,7 @@ function SavePlayerAccount(player)
 		GetPlayerArmor(player),
 		PlayerData[player].accountid)
 
-	mariadb_query(sql, query)
+	mariadb_async_query(sql, query)
 end
 
 
