@@ -43,6 +43,8 @@ AddEvent("OnPlayerSteamAuth", OnPlayerSteamAuth)
 function OnPlayerJoin(player)
 	print("OnPlayerJoin("..player..")")
 
+	CreatePlayerData(player)
+
 	SetPlayerSpawnLocation(player, 170027, 191893, 1309, 173)
 
 	Delay(2000, function(player)
@@ -69,6 +71,8 @@ function OnAccountLoadId(player)
 	if (mariadb_get_row_count() == 0) then
 		--There is no account for this player, continue by checking if their IP was banned		
 		CheckForIPBan(player)
+
+		CreatePlayerAccount(player)
 	else
 		--There is an account for this player, continue by checking if it's banned
 		PlayerData[player].accountid = mariadb_get_value_index(1, 1)
