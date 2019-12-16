@@ -142,12 +142,15 @@ function CreatePlayerAccount(player)
 		GetPlayerLocale(player),
 		GetPlayerIP(player))
 
+	print(query)
 	mariadb_query(sql, query, OnAccountCreated, player)
 end
 
 
 function OnAccountCreated(player)
 	PlayerData[player].accountid = mariadb_get_insert_id()
+
+	print("inserted new player")
 
 	SetPlayerLoggedIn(player)
 
