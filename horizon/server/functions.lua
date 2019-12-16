@@ -162,6 +162,11 @@ rgb2hex = function (rgb)
 	return hexadecimal
 end
 
+function GetPlayerData(player)
+	return PlayerData[player]
+end
+AddFunctionExport("GetPlayerData", GetPlayerData)
+
 function GetPlayerColorHEX(player)
 	local r, g, b = HexToRGBA(PlayerData[player].color)
 
@@ -184,6 +189,7 @@ end
 function GetPlayerColor(player)
 	return PlayerData[player].color
 end
+AddFunctionExport("GetPlayerColor", GetPlayerColor)
 
 function FormatMoney(money)
 	return format_num(money, 0, "€")

@@ -352,7 +352,6 @@ function cmd_stats(player, otherplayer)
 	if (not IsValidPlayer(p)) then
 		return AddPlayerChat(player, "Selected player does not exist")
 	end
-
 	webgui.ShowMessageBox(player, "<span style=\"color:"..GetPlayerColorHEX(p)..";\">"..GetPlayerName(p).."("..p..")</span><br><br>\
 	Cash: "..GetPlayerCashFormat(p).."<br>\
 	Bank: "..FormatMoney(PlayerData[p].bank_balance).."<br>\

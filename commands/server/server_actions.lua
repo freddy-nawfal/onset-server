@@ -1,4 +1,5 @@
 webgui = ImportPackage("webgui")
+horizon = ImportPackage("horizon")
 
 AddRemoteEvent("commands:inventory", function(player)
 	local p = otherplayer or player
@@ -9,8 +10,8 @@ AddRemoteEvent("commands:inventory", function(player)
 		return AddPlayerChat(player, "Selected player does not exist")
 	end
 
-	webgui.ShowMessageBox(player, "<span>".."Mon frère".."("..p..")</span><br><br>\
-	Cash: ".."1234€".."<br>\
-	Banque: ".."654€".."<br>\
+	webgui.ShowMessageBox(player, "<span>"..GetPlayerName(p).."("..p..")</span><br><br>\
+	Cash: "..horizon.GetPlayerCashFormat(player).."<br>\
+	Banque: "..horizon.FormatMoney(horizon.GetPlayerData().bank_balance).."<br>\
 	<img src=\"http://game/objects/1\">")
 end)
