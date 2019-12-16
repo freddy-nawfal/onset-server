@@ -135,7 +135,7 @@ end
 
 
 function CreatePlayerAccount(player)
-	local query = mariadb_prepare(sql, "INSERT INTO accounts (id, steamid, steam_name, game_version, locale, registration_time, registration_ip) VALUES (NULL, '?', '?', ?, '?', UNIX_TIMESTAMP(), '?');",
+	local query = mariadb_prepare(sql, "INSERT INTO accounts (id, steamid, steam_name, game_version, locale, registration_time, registration_ip) VALUES (0, '?', '?', ?, '?', UNIX_TIMESTAMP(), '?');",
 		tostring(GetPlayerSteamId(player)),
 		GetPlayerName(player),
 		GetPlayerGameVersion(player),
