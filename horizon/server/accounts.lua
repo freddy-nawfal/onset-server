@@ -142,7 +142,13 @@ function CreatePlayerAccount(player)
 		GetPlayerLocale(player),
 		GetPlayerIP(player))
 
-	mariadb_async_query(sql, query, OnAccountCreated, player)
+	local result = mariadb_query(sql, query)
+	if(result) then
+		print("inch.com")
+		OnAccountCreated(player)
+	else
+		print("mon frere c cho")
+	end
 end
 
 
