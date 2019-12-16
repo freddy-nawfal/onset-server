@@ -144,7 +144,7 @@ function CreatePlayerAccount(player)
 
 	print(query)
 	local success = mariadb_query(sql, query, OnAccountCreated, player)
-	if(!success) print("guys we got an error")
+	if(~success) print("guys we got an error")
 end
 
 
