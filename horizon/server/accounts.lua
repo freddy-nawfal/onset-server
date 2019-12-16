@@ -19,6 +19,8 @@ PlayerData = {}
 
 function OnPlayerServerAuth(player)
 	print("OnPlayerServerAuth("..player..")")
+
+	OnPlayerSteamAuth(player)
 end
 AddEvent("OnPlayerServerAuth", OnPlayerServerAuth)
 
