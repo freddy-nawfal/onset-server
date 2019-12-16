@@ -68,11 +68,9 @@ AddEvent("OnPlayerQuit", OnPlayerQuit)
 function OnAccountLoadId(player)
 	if (mariadb_get_row_count() == 0) then
 		--There is no account for this player, continue by checking if their IP was banned		
-		print("no account for player "..player)
 		CheckForIPBan(player)
 	else
 		--There is an account for this player, continue by checking if it's banned
-		print("Account found for player "..player)
 		PlayerData[player].accountid = mariadb_get_value_index(1, 1)
 
 		local query = mariadb_prepare(sql, "SELECT FROM_UNIXTIME(bans.ban_time), bans.expire_time, FROM_UNIXTIME(bans.expire_time), bans.reason, accounts.steam_name FROM bans LEFT JOIN accounts ON bans.admin_id = accounts.id WHERE bans.id = ?;",
@@ -116,8 +114,10 @@ function OnAccountCheckIpBan(player)
 	if (mariadb_get_row_count() == 0) then
 		--No IP ban found for this account
 		if (PlayerData[player].accountid == 0) then
+			print("Creating account for player "..player)
 			CreatePlayerAccount(player)
 		else
+			print("Load account for player "..player)
 			LoadPlayerAccount(player)
 		end
 	else
