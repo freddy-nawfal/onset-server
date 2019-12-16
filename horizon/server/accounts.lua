@@ -143,7 +143,8 @@ function CreatePlayerAccount(player)
 		GetPlayerIP(player))
 
 	print(query)
-	mariadb_query(sql, query, OnAccountCreated, player)
+	local success = mariadb_query(sql, query, OnAccountCreated, player)
+	if(!success) print("guys we got an error")
 end
 
 
