@@ -66,6 +66,8 @@ AddEvent("OnPlayerQuit", OnPlayerQuit)
 
 
 function OnAccountLoadId(player)
+	print("Account loaded for player: " ..player)
+
 	if (mariadb_get_row_count() == 0) then
 		--There is no account for this player, continue by checking if their IP was banned		
 		CheckForIPBan(player)
