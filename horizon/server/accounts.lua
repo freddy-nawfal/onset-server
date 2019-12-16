@@ -142,6 +142,7 @@ function CreatePlayerAccount(player)
 		GetPlayerLocale(player),
 		GetPlayerIP(player))
 
+	print(query)
 	local result = mariadb_query(sql, query)
 	if(result) then
 		print("inch.com")
