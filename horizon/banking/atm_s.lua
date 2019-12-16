@@ -16,10 +16,12 @@ AtmObjectsCached = { }
 AtmTable = { }
 
 AddEvent("database:connected", function()
+	print("Gettings atms")
 	mariadb_async_query(sql, "SELECT * FROM atm;", OnAtmLoaded)
 end)
 
 function OnAtmLoaded()
+	print("There is "..mariadb_get_row_count().." atms")
 	for i=1,mariadb_get_row_count() do
 		local result = mariadb_get_assoc(i)
 

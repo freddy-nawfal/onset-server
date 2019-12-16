@@ -51,6 +51,7 @@ function OnPlayerJoin(player)
 		AddPlayerChat(player, '<span color="#8800eeff" style="bold" size="16">Bienvenue sur Trumpistan\' RP!</>')
 		--AddPlayerChat(player, '<span color="#8800eeff" size="14">Popular teleports: /gas  /prison  /town</>')
 	end, player)
+
 end
 AddEvent("OnPlayerJoin", OnPlayerJoin)
 
@@ -145,19 +146,14 @@ function CreatePlayerAccount(player)
 	print(query)
 	local result = mariadb_query(sql, query)
 	if(result) then
-		print("inch.com")
 		OnAccountCreated(player)
 	else
-		print("mon frere c cho")
 	end
 end
 
 
 function OnAccountCreated(player)
-	print("pls guys")
 	PlayerData[player].accountid = mariadb_get_insert_id()
-
-	print("inserted new player")
 
 	SetPlayerLoggedIn(player)
 
