@@ -2,8 +2,10 @@
 	"author": "Freddy NAWFAL",
 	"version": "1.0",
 	"server_scripts": [
-		"server/user_commands.lua"
+		"server/server_actions.lua"
 	],
-	"client_scripts": [],
+	"client_scripts": [
+        "client/client_actions.lua"
+    ],
 	"files": []
 }
