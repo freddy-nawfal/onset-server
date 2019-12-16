@@ -110,10 +110,12 @@ end
 function GetPlayerCash(player)
 	return PlayerData[player].cash
 end
+AddFunctionExport("GetPlayerCash", GetPlayerCash)
 
 function GetPlayerCashFormat(player)
 	return FormatMoney(GetPlayerCash(player))
 end
+AddFunctionExport("GetPlayerCashFormat", GetPlayerCashFormat)
 
 function GetPlayerTime(player)
 	PlayerData[player].time = math.floor(PlayerData[player].time + (GetTimeSeconds() - PlayerData[player].play_time))
@@ -184,8 +186,9 @@ function GetPlayerColor(player)
 end
 
 function FormatMoney(money)
-	return format_num(money, 0, "$")
+	return format_num(money, 0, "€")
 end
+AddFunctionExport("FormatMoney", FormatMoney)
 
 function GetNearestVehicle(player)
 	local vehicles = GetStreamedVehiclesForPlayer(player)
