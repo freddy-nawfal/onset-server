@@ -143,12 +143,12 @@ function CreatePlayerAccount(player)
 		GetPlayerIP(player))
 
 	print(query)
-	local success = mariadb_query(sql, query, OnAccountCreated, player)
-	if(~success) then print("guys we got an error") else print("its ok guys") end
+	mariadb_query(sql, query, OnAccountCreated, player)
 end
 
 
 function OnAccountCreated(player)
+	print("pls guys")
 	PlayerData[player].accountid = mariadb_get_insert_id()
 
 	print("inserted new player")
