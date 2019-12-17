@@ -224,6 +224,7 @@ function OnAccountLoaded(player)
 		query = mariadb_prepare(sql, "SELECT item_id, display_name, quantity FROM `user_items` INNER JOIN items_available ON user_items.item_id=items_available.id WHERE user_id=?",
 			PlayerData[player].accountid)
 
+		print(query)
 		mariadb_async_query(sql, query, OnItemsLoaded, player)
 	end
 end
