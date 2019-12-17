@@ -44,10 +44,11 @@ function ShowInventory(money, inventory) {
 	$('#mbox-money').html(Base64Decode(money));
 	$('#mbox-inventory').html("");
 
-	/*var inv = Base64Decode(inventory);
+	var inv = Base64Decode(inventory);
+	if(inv) inv = JSON.parse(inv);
 	inv.forEach(i => {
 		$('#mbox-inventory').append(i.display_name+" - "+i.quantity);
-	});*/
+	});
 	//$('#mbox-inventory').append(Base64Decode(inventory));
 }
 
