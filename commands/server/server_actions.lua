@@ -18,6 +18,8 @@ AddRemoteEvent("commands:inventory", function(player)
 		"<span>"..GetPlayerName(p).."("..p..")</span><br><br>\
 		Cash: "..horizon.GetPlayerCashFormat(player).."<br>\
 		Banque: "..horizon.FormatMoney(horizon.GetPlayerData(player).bank_balance),
-		horizon.GetPlayerData(player).items
+		json_encode(horizon.GetPlayerData(player).items)
 	)
+
+	print("showing inventory")
 end)
