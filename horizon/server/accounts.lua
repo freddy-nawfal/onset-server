@@ -234,7 +234,9 @@ function OnItemsLoaded(player)
 	local items = {}
 	for i=1,mariadb_get_row_count() do
 		local result = mariadb_get_assoc(i)
-		print(result)
+		print(result["item_id"])
+		print(result["quantity"])
+		print(result["display_name"])
 
 		local item_id = math.tointeger(result["item_id"])
 		local quantity = math.tointeger(result["quantity"])
