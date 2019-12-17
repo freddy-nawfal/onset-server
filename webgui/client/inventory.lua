@@ -1,5 +1,5 @@
 function ShowInventory(money, inventory)
-	ExecuteWebJS(WebGuiId, "ShowInventory('"..Base64Encode(money)..", "..Base64Encode(inventory).."');")
+	ExecuteWebJS(WebGuiId, "ShowInventory('"..Base64Encode(money).."', '"..Base64Encode(inventory).."');")
 	SetWebVisibility(WebGuiId, WEB_VISIBLE)
 	ShowMouseCursor(true)
 	SetInputMode(INPUT_UI)
