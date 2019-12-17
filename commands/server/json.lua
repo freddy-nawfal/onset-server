@@ -131,10 +131,9 @@ encode = function(val, stack)
 end
 
 
-function json.encode(val)
+function json_encode(val)
   return ( encode(val) )
 end
-AddFunctionExport("json_encode", json.encode)
 
 
 

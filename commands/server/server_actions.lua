@@ -1,12 +1,11 @@
 webgui = ImportPackage("webgui")
 horizon = ImportPackage("horizon")
-json = ImportPackage("json")
 
 AddRemoteEvent("commands:inventory", function(player)
 	local p = otherplayer or player
 
 	print("items: ")
-	print(json.json_encode(horizon.GetPlayerData(player).items))
+	print(json_encode(horizon.GetPlayerData(player).items))
 
 	p = tonumber(p)
 
