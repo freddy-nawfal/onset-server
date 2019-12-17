@@ -56,6 +56,10 @@ $(document).ready(function() {
 		HideMessageBox();
 		CallEvent("OnHideMessageBox");
 	});
+	$('.box-close').click(function() {
+		HideMessageBox();
+		CallEvent("OnHideMessageBox");
+	});
 
 	window.onclick = function(event) {
 		if (event.target == messageBox) {
