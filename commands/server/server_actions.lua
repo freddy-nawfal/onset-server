@@ -1,6 +1,6 @@
 webgui = ImportPackage("webgui")
 horizon = ImportPackage("horizon")
-json = require("json")
+json = require "json" 
 
 AddRemoteEvent("commands:inventory", function(player)
 	local p = otherplayer or player
