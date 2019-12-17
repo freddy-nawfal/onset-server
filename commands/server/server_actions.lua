@@ -10,7 +10,11 @@ AddRemoteEvent("commands:inventory", function(player)
 		return AddPlayerChat(player, "Selected player does not exist")
 	end
 
-	webgui.ShowMessageBox(player, "<span>"..GetPlayerName(p).."("..p..")</span><br><br>\
-	Cash: "..horizon.GetPlayerCashFormat(player).."<br>\
-	Banque: "..horizon.FormatMoney(horizon.GetPlayerData(player).bank_balance))
+	webgui.ShowInventory(
+		player, 
+		"<span>"..GetPlayerName(p).."("..p..")</span><br><br>\
+		Cash: "..horizon.GetPlayerCashFormat(player).."<br>\
+		Banque: "..horizon.FormatMoney(horizon.GetPlayerData(player).bank_balance),
+		horizon.GetPlayerData(player).items
+	)
 end)

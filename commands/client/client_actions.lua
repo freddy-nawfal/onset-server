@@ -1,6 +1,6 @@
 AddEvent("OnKeyPress", function(key)
-	if IsCtrlPressed() and key == 'Y' then
-        AddPlayerChat("You have pressed CTRL + Y")
+	if key == 'Y' then
+        AddPlayerChat("Ouverture de l'inventaire")
         CallRemoteEvent("commands:inventory")
 	end
 end)

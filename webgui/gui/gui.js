@@ -38,6 +38,24 @@ function HideMessageBox() {
 	$('#globalMessageBox').css('display', 'none');
 }
 
+function ShowInventory(money, inventory) {
+	$('#mbox-money').html(Base64Decode(money));
+	$('#mbox-inventory').html("");
+
+	/*var inv = Base64Decode(inventory);
+	inv.forEach(i => {
+		$('#mbox-inventory').append(i.display_name+" - "+i.quantity);
+	});*/
+	$('#mbox-inventory').append(Base64Decode(inventory));
+	
+	$('#globalMessageBox').css('display', 'block');
+}
+
+function HideInventory() {
+	$('#globalMessageBox').css('display', 'none');
+}
+
+
 let InputEvent = "";
 
 function ShowInputBox(message, button, localevent) {

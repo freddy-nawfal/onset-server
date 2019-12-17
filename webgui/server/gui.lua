@@ -17,6 +17,11 @@ function ShowMessageBox(player, text)
 end
 AddFunctionExport("ShowMessageBox", ShowMessageBox)
 
+function ShowInventory(player, money, inventory)
+	CallRemoteEvent(player, "ShowInventory", text)
+end
+AddFunctionExport("ShowInventory", ShowInventory)
+
 function ShowInputBox(player, message, button, event)
 	CallRemoteEvent(player, "ShowInputBox", message, button, event)
 end
