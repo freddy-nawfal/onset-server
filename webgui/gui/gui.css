@@ -104,7 +104,7 @@ img {
 }
 
 .mbox-content {
-	background-color: #8f9cb5;
+	background-color: rgba(255, 255, 255, 0.8);
 	color: black;
 	font-size: 1.5vh;
 	font-weight: bold;
@@ -116,7 +116,7 @@ img {
 }
 
 .mbox-close {
-	color: #aaa;
+	color: black;
 	float: right;
 	font-size: 4vh;
 	font-weight: bold;
@@ -130,7 +130,8 @@ img {
 }
 
 .mbox-close:hover,
-.mbox-close:focus {
+.mbox-close:focus,
+.box-close:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
