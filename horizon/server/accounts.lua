@@ -236,7 +236,7 @@ function OnItemsLoaded(player)
 
 		local item_id = math.tointeger(result["item_id"])
 		local quantity = math.tointeger(result["quantity"])
-		table.insert(items, {item_id = item_id, quantity = quantity})
+		items[item_id] = quantity
 	end
 
 	PlayerData[player].items = items
