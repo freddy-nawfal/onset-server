@@ -237,6 +237,7 @@ function OnItemsLoaded(player)
 		local item_id = math.tointeger(result["item_id"])
 		local quantity = math.tointeger(result["quantity"])
 		local display_name = math.tointeger(result["display_name"])
+		print(item_id.." - "..quantity.." - "..display_name)
 		items[item_id] = {display_name = display_name, quantity = quantity}
 	end
 
