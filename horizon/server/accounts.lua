@@ -219,7 +219,29 @@ function OnAccountLoaded(player)
 			GetPlayerIP(player))
 
 		mariadb_async_query(sql, query)
+
+		-- Get user items
+		query = mariadb_prepare(sql, "SELECT * FROM user_items WHERE user_id = ?",
+			PlayerData[player].accountid)
+
+		mariadb_async_query(sql, query, OnItemsLoaded, player)
 	end
+end
+
+
+function OnItemsLoaded(player)
+	local items = []
+	for i=1,mariadb_get_row_count() do
+		local result = mariadb_get_assoc(i)
+
+		local item_id = math.tointeger(result["item_id"])
+		local quantity = math.tointeger(result["quantity"])
+		table.insert(items, {item_id: item_id, quantity: quantity})
+	end
+
+	PlayerData[player].items = items
+
+	print(player.." has items: "..items)
 end
 
 
@@ -242,6 +264,7 @@ function CreatePlayerData(player)
 	PlayerData[player].count_login = 0
 	PlayerData[player].count_kick = 0
 	PlayerData[player].last_login_time = 0
+	PlayerData[player].items = [] -- {item_id: 3, quantity: 5}
 
 	--Gameplay stuff
 	PlayerData[player].logged_in = false
