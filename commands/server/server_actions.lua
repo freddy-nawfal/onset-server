@@ -15,9 +15,7 @@ AddRemoteEvent("commands:inventory", function(player)
 
 	webgui.ShowInventory(
 		player, 
-		"<span>"..GetPlayerName(p).."("..p..")</span><br><br>\
-		Cash: "..horizon.GetPlayerCashFormat(player).."<br>\
-		Banque: "..horizon.FormatMoney(horizon.GetPlayerData(player).bank_balance),
+		"<span>"..GetPlayerName(p).."("..p..")</span><br>Cash: "..horizon.GetPlayerCashFormat(player).."<br>Banque: "..horizon.FormatMoney(horizon.GetPlayerData(player).bank_balance).."<br>",
 		json_encode(horizon.GetPlayerData(player).items)
 	)
 
