@@ -39,7 +39,7 @@ function HideMessageBox() {
 }
 
 function ShowInventory(money, inventory) {
-	$('#mbox-message').html(Base64Decode(money));
+	$('#mbox-message').html("Base64Decode(money)");
 	$('#mbox-inventory').html("");
 
 	/*var inv = Base64Decode(inventory);
