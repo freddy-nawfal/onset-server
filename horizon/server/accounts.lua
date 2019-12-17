@@ -221,7 +221,7 @@ function OnAccountLoaded(player)
 		mariadb_async_query(sql, query)
 
 		-- Get user items
-		query = mariadb_prepare(sql, "SELECT * FROM user_items WHERE user_id = ?",
+		query = mariadb_prepare(sql, "SELECT item_id, display_name, quantity FROM `user_items` INNER JOIN items_available ON user_items.item_id=items_available.id WHERE user_id=?",
 			PlayerData[player].accountid)
 
 		mariadb_async_query(sql, query, OnItemsLoaded, player)
@@ -236,7 +236,8 @@ function OnItemsLoaded(player)
 
 		local item_id = math.tointeger(result["item_id"])
 		local quantity = math.tointeger(result["quantity"])
-		items[item_id] = quantity
+		local display_name = math.tointeger(result["display_name"])
+		items[item_id] = {display_name = display_name, quantity = quantity}
 	end
 
 	PlayerData[player].items = items
