@@ -240,8 +240,7 @@ function OnItemsLoaded(player)
 	end
 
 	PlayerData[player].items = items
-
-	print(player.." has items: "..items)
+	print("loaded player items")
 end
 
 
