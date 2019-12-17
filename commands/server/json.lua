@@ -134,7 +134,7 @@ end
 function json.encode(val)
   return ( encode(val) )
 end
-AddFunctionExport("json.encode", json.encode)
+AddFunctionExport("json_encode", json.encode)
 
 
 
