@@ -13,7 +13,6 @@
 	],
 	"files": [
 		"gui/gui.html",
-		"gui/inventory.html",
 		"gui/gui.css",
 		"gui/jquery.js",
 		"gui/gui.js",

@@ -39,8 +39,6 @@ function HideMessageBox() {
 }
 
 function ShowInventory(money, inventory) {
-	$('#globalMessageBox').css('display', 'block');
-
 	$('#mbox-message').html(Base64Decode(money));
 	$('#mbox-inventory').html("");
 
@@ -49,6 +47,8 @@ function ShowInventory(money, inventory) {
 	inv.forEach(i => {
 		$('#mbox-inventory').append(i.display_name+" - "+i.quantity);
 	});
+
+	$('#globalMessageBox').css('display', 'block');
 }
 
 function HideInventory() {
