@@ -18,7 +18,7 @@ end
 AddFunctionExport("ShowMessageBox", ShowMessageBox)
 
 function ShowInventory(player, money, inventory)
-	CallRemoteEvent(player, "ShowInventory", text)
+	CallRemoteEvent(player, "ShowInventory", money, inventory)
 end
 AddFunctionExport("ShowInventory", ShowInventory)
 
