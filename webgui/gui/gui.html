@@ -40,15 +40,18 @@
 <body oncontextmenu="return false">
 
 
-	<div class="cd-popup is-visible" role="alert" id="globalMessageBox">
-		<div class="cd-popup-container">
-			<p><span id="mbox-message">message</span></p>
-			<ul class="cd-buttons">
-				<li><a href="#0">Fermer</a></li>
-			</ul>
-			<a href="#0" class="cd-popup-close img-replace mbox-close">Close</a>
-		</div> <!-- cd-popup-container -->
-	</div> <!-- cd-popup -->
+	<div class="pageWrapper">
+		<div id="globalMessageBox" class="mbox">
+			<div class="mbox-content">
+				<span class="mbox-close">&times;</span>
+				<p><br><span id="mbox-message">message</span><br><br></p>
+				<button class="mbox-close btn">Fermer</button>
+			</div>
+		</div>
+			<div class="siteWrapper">
+
+			</div>
+	</div>
 
 </body>
 </html>

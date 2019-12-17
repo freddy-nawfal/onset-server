@@ -62,13 +62,6 @@ html * {
   box-sizing: border-box;
 }
 
-body {
-  font-size: 100%;
-  font-family: "Lato", sans-serif;
-  color: #8f9cb5;
-  background-color: #ffd88f;
-}
-
 a {
   color: #35a785;
   text-decoration: none;
