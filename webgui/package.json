@@ -7,10 +7,12 @@
 	"client_scripts": [
 		"client/gui.lua",
 		"client/message_box.lua",
+		"client/inventory.lua",
 		"client/text.lua"
 	],
 	"files": [
 		"gui/gui.html",
+		"gui/inventory.html",
 		"gui/gui.css",
 		"gui/jquery.js",
 		"gui/gui.js",
