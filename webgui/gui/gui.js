@@ -39,6 +39,8 @@ function HideMessageBox() {
 }
 
 function ShowInventory(money, inventory) {
+	$('#globalMessageBox').css('display', 'block');
+
 	$('#mbox-money').html(Base64Decode(money));
 	$('#mbox-inventory').html("");
 
@@ -46,9 +48,7 @@ function ShowInventory(money, inventory) {
 	inv.forEach(i => {
 		$('#mbox-inventory').append(i.display_name+" - "+i.quantity);
 	});*/
-	$('#mbox-inventory').append(Base64Decode(inventory));
-	
-	$('#globalMessageBox').css('display', 'block');
+	//$('#mbox-inventory').append(Base64Decode(inventory));
 }
 
 function HideInventory() {
