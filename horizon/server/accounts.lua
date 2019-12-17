@@ -230,7 +230,7 @@ end
 
 
 function OnItemsLoaded(player)
-	local items = []
+	local items = {}
 	for i=1,mariadb_get_row_count() do
 		local result = mariadb_get_assoc(i)
 
@@ -264,7 +264,7 @@ function CreatePlayerData(player)
 	PlayerData[player].count_login = 0
 	PlayerData[player].count_kick = 0
 	PlayerData[player].last_login_time = 0
-	PlayerData[player].items = [] -- {item_id: 3, quantity: 5}
+	PlayerData[player].items = {} -- {item_id: 3, quantity: 5}
 
 	--Gameplay stuff
 	PlayerData[player].logged_in = false
