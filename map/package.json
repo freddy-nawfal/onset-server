@@ -1,0 +1,9 @@
+{
+	"author": "Freddy NAWFAL",
+	"version": "1.0",
+	"server_scripts": [
+		"map.lua"
+	],
+	"client_scripts": [],
+	"files": []
+}
